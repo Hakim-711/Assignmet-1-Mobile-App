@@ -27,15 +27,21 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val foodItems = arrayOf("Pizza", "Burger", "Taco", "Sushi")
+        val foodItems = arrayOf("")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, foodItems)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        foodSpinner.adapter = adapter
+        foodSpinner.onItemSelectedListener.apply {
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            foodSpinner.adapter = adapter
+        }
+
+
 
         button.setOnClickListener {
             val selectedFood = foodSpinner.selectedItem.toString()
             resultList.text = "Your favorite food is $selectedFood"
         }
+
+
 
         foodSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {

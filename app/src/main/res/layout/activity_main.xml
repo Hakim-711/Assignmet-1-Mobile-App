@@ -1,61 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/imge"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="152dp" />
 
     <TextView
         android:id="@+id/text_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:background="#0000E676"
         android:text="@string/select_your_favorite_food"
-        android:textSize="24sp" />
+        android:textColor="#050505"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:ignore="TextSizeCheck" />
 
     <Spinner
         android:id="@+id/food_spinner"
-        android:layout_width="348dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:minHeight="48dp" />
-
+        android:contentDescription="@string/add_to_list"
+        android:minWidth="32dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:hint="@string/enter_custom_food_item"
-        android:autofillHints="Food"
-        android:inputType="text"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:layout_height="wrap_content"
 
+        android:autofillHints="Food"
+        android:hint="@string/enter_custom_food_item"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#0E0E0E"
+        android:textColorHint="#050505"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <Button
         android:id="@+id/add_list"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/cardview_dark_background"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
         android:text="@string/add_to_list"
 
         tools:ignore="VisualLintButtonSize" />
 
     <Button
-        android:id="@+id/result"
-        android:layout_width="300dp"
-        android:layout_height="64dp"
-        android:layout_gravity="center"
-
-        android:contentDescription="@string/appbar_scrolling_view_behavior" />
-
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_gravity="center"
+
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="@string/submit" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="225dp" />
 
 </LinearLayout>
